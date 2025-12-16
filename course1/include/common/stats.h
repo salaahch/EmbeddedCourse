@@ -21,7 +21,7 @@
 
 #ifndef __STATS_H__
 #define __STATS_H__
-
+#include "platform.h"
 /* The fixed array size for testing */
 #define SIZE (40)
 

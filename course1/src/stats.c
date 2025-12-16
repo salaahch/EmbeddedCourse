@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "stats.h"
 
+
 void print_statistics(unsigned char *array, unsigned int length) {
     if (array == NULL || length == 0) {
         printf("Error: Array is empty or NULL.\n");
@@ -21,19 +22,21 @@ void print_statistics(unsigned char *array, unsigned int length) {
 }
 
 void print_array(unsigned char *array, unsigned int length) {
+    #ifdef VERBOSE
     if (array == NULL || length == 0) {
-        printf("[]\n");
+        PRINTF("[]\n");
         return;
     }
 
-    printf("Array (%d elements):\n", length);
+    PRINTF("Array (%d elements):\n", length);
     for (unsigned int i = 0; i < length; i++) {
-        printf("%3d ", array[i]);
+        PRINTF("%3d ", array[i]);
         if ((i + 1) % 10 == 0) {
-            printf("\n");
+            PRINTF("\n");
         }
     }
-    printf("\n");
+    PRINTF("\n");
+    #endif
 }
 
 float find_median(unsigned char *array, unsigned int length) {
